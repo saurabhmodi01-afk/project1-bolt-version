@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-marvel-steel/20;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-marvel-ink text-marvel-bone font-body antialiased;
+    overflow-x: hidden;
+  }
+  ::selection {
+    @apply bg-marvel-red text-white;
+  }
+}
+
+@layer components {
+  .text-stroke {
+    -webkit-text-stroke: 2px rgba(245, 245, 247, 0.15);
+    color: transparent;
+  }
+  .text-stroke-red {
+    -webkit-text-stroke: 2px #ED1D24;
+    color: transparent;
+  }
+  .gold-gradient {
+    background: linear-gradient(135deg, #F0A500 0%, #FFD56B 50%, #F0A500 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .red-gradient {
+    background: linear-gradient(135deg, #ED1D24 0%, #FF4B4B 50%, #ED1D24 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .shimmer-text {
+    background: linear-gradient(90deg, #F5F5F7 0%, #F0A500 25%, #F5F5F7 50%, #F0A500 75%, #F5F5F7 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 2.5s linear infinite;
+  }
+  .glass {
+    @apply bg-marvel-ink-2/60 backdrop-blur-xl border border-marvel-steel/30;
+  }
+  .glass-card {
+    @apply bg-marvel-ink-2/50 backdrop-blur-lg border border-marvel-steel/20 rounded-2xl;
+  }
+  .section-label {
+    @apply inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.3em] text-marvel-gold;
+  }
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 px-8 py-4 font-display text-lg tracking-wider text-white bg-marvel-red rounded-lg overflow-hidden transition-all duration-300 hover:bg-marvel-red-dark hover:scale-105 active:scale-95;
+  }
+  .btn-ghost {
+    @apply relative inline-flex items-center justify-center gap-2 px-8 py-4 font-display text-lg tracking-wider text-marvel-bone border border-marvel-steel rounded-lg overflow-hidden transition-all duration-300 hover:border-marvel-gold hover:text-marvel-gold;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0F;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ED1D24, #B81117);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ED1D24;
+}
+
+/* Grid background pattern */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(42, 42, 56, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42, 42, 56, 0.15) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Radial spotlight */
+.spotlight {
+  background: radial-gradient(circle at 50% 0%, rgba(237, 29, 36, 0.15) 0%, transparent 50%);
+}
+
+/* Comic dot pattern */
+.dots-bg {
+  background-image: radial-gradient(circle, rgba(245, 245, 247, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Arc reactor glow */
+.arc-glow {
+  box-shadow:
+    0 0 30px rgba(240, 165, 0, 0.3),
+    0 0 60px rgba(240, 165, 0, 0.15),
+    inset 0 0 20px rgba(240, 165, 0, 0.1);
+}
